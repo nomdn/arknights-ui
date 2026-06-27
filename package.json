@@ -1,0 +1,16 @@
+{
+  "name": "arknights-ui-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @arknights-ui/playground dev",
+    "build": "pnpm --filter @arknights-ui/arknights-ui build",
+    "doc": "pnpm --filter @arknights-ui/docs dev",
+    "doc:build": "pnpm --filter @arknights-ui/docs build"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

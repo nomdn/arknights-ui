@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--ak-font-family);
+  font-size: var(--ak-font-size-base);
+  line-height: var(--ak-line-height-base);
+  color: var(--ak-text-regular);
+  background-color: var(--ak-bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ak-text-primary);
+}
+
+a {
+  color: var(--ak-primary);
+  text-decoration: none;
+  padding: 0 3px;
+  transition-duration: .3s;
+  transition-property: color, background-color;
+}
+
+a:hover {
+  color: var(--ak-text-hover-on-primary);
+  background-color: var(--ak-primary);
+}
+
+code {
+  font-family: var(--ak-font-mono);
+  background-color: var(--ak-bg-soft-hover);
+  padding: 0 3px;
+}
+
+strong {
+  color: var(--ak-text-primary);
+}
+
+blockquote {
+  border-left: var(--ak-primary) solid 5px;
+  padding: 3px 20px;
+  background-color: var(--ak-bg-soft);
+  transition: background-color .3s;
+}
+blockquote:hover {
+  background-color: var(--ak-bg-soft-hover);
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  color: var(--ak-text-rev);
+  background-color: var(--ak-text-primary);
+  border: var(--ak-border-color-light) solid 1px;
+  padding: 0 10px;
+}
+
+table td {
+  padding: 0 8px;
+  border: var(--ak-primary) solid 1px;
+}
+table td:hover {
+  background-color: rgba(var(--ak-primary), .1);
+}
+
+/* Scrollbar - from astro-arknights */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #5a5a5a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18d1ff;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ak-primary-lighter);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #18d1ff #5a5a5a;
+}

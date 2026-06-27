@@ -1,0 +1,105 @@
+:root {
+  /* === Arknights Color System (from official themes) === */
+  --ak-primary: #18d1ff;
+  --ak-primary-light: #2bf;
+  --ak-primary-lighter: #5ee4ff;
+  --ak-primary-lightest: #90edff;
+  --ak-primary-dark: #0fa8d4;
+  --ak-primary-darker: #0c8ab0;
+
+  /* Subcolor - the iconic Arknights yellow accent */
+  --ak-subcolor: #ffee22;
+  --ak-subcolor-light: #fff55e;
+  --ak-subcolor-dark: #e6d200;
+
+  --ak-danger: #C0392B;
+  --ak-danger-light: #e74c3c;
+  --ak-danger-dark: #962d22;
+
+  --ak-success: #00c853;
+  --ak-success-light: #22ff99;
+  --ak-success-dark: #00a844;
+
+  --ak-warning: #ffee22;
+  --ak-warning-light: #fff55e;
+  --ak-warning-dark: #e6d200;
+
+  --ak-info: #7e57c2;
+
+  /* === Background Layers (from hexo-theme-arknights dark mode) === */
+  --ak-bg-base: #141516;
+  --ak-bg-panel: #1a1a1a;
+  --ak-bg-card: rgba(20, 21, 22, 0.95);
+  --ak-bg-card-hover: rgba(50, 52, 54, 0.8);
+  --ak-bg-input: #000;
+  --ak-bg-overlay: rgba(0, 0, 0, 0.85);
+  --ak-bg-soft: rgba(#fff, .05);
+  --ak-bg-soft-hover: rgba(#fff, .1);
+
+  /* === Borders === */
+  --ak-border-color: rgba(#fff, .1);
+  --ak-border-color-light: #fff;
+  --ak-border-color-active: var(--ak-primary);
+  --ak-border-radius-sm: 2px;
+  --ak-border-radius-md: 3px;
+  --ak-border-radius-lg: 4px;
+  --ak-border-radius-xl: 6px;
+
+  /* === Text (from hexo-theme-arknights dark.styl) === */
+  --ak-text-primary: #fff;
+  --ak-text-regular: #c4c4c4;
+  --ak-text-secondary: #898989;
+  --ak-text-muted: #535353;
+  --ak-text-placeholder: #89898966;
+  --ak-text-rev: #000;
+  --ak-text-hover-on-primary: #000;
+
+  /* === Typography (from astro-arknights / official fonts) === */
+  --ak-font-family: 'Bender', 'Noto Sans SC', 'Microsoft YaHei', '\5b8b\4f53', sans-serif;
+  --ak-font-family-light: 'BenderLight', 'Noto Sans SC', sans-serif;
+  --ak-font-family-bold: 'BenderBold', 'Noto Sans SC', sans-serif;
+  --ak-font-family-display: 'Novecentosanswide', 'Oswald', 'Bender', sans-serif;
+  --ak-font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  --ak-font-size-xs: 12px;
+  --ak-font-size-sm: 13px;
+  --ak-font-size-base: 14px;
+  --ak-font-size-md: 16px;
+  --ak-font-size-lg: 18px;
+  --ak-font-size-xl: 20px;
+  --ak-font-size-xxl: 24px;
+  --ak-font-weight-normal: 400;
+  --ak-font-weight-medium: 500;
+  --ak-font-weight-bold: 600;
+  --ak-line-height-base: 1.5;
+
+  /* === Shadows === */
+  --ak-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --ak-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --ak-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --ak-shadow-glow: 0 0 15px rgba(24, 209, 255, 0.25);
+  --ak-shadow-glow-strong: 0 0 25px rgba(24, 209, 255, 0.45);
+
+  /* === Transitions === */
+  --ak-transition-fast: 150ms ease;
+  --ak-transition-base: 250ms ease;
+  --ak-transition-slow: 400ms ease;
+
+  /* === Spacing === */
+  --ak-spacing-xs: 4px;
+  --ak-spacing-sm: 8px;
+  --ak-spacing-md: 12px;
+  --ak-spacing-lg: 16px;
+  --ak-spacing-xl: 24px;
+  --ak-spacing-xxl: 32px;
+
+  /* === Z-index === */
+  --ak-z-dropdown: 100;
+  --ak-z-dialog: 1000;
+  --ak-z-drawer: 1000;
+  --ak-z-overlay: 999;
+
+  /* === Component Sizes === */
+  --ak-component-size-sm: 28px;
+  --ak-component-size-md: 36px;
+  --ak-component-size-lg: 44px;
+}

@@ -1,0 +1,48 @@
+/* Fade */
+.ak-fade-enter-active,
+.ak-fade-leave-active {
+  transition: opacity var(--ak-transition-base);
+}
+.ak-fade-enter-from,
+.ak-fade-leave-to {
+  opacity: 0;
+}
+
+/* Scale Fade for Dialog */
+.ak-zoom-enter-active,
+.ak-zoom-leave-active {
+  transition: all var(--ak-transition-base);
+}
+.ak-zoom-enter-from,
+.ak-zoom-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Slide for Drawer */
+.ak-slide-left-enter-active,
+.ak-slide-left-leave-active,
+.ak-slide-right-enter-active,
+.ak-slide-right-leave-active {
+  transition: transform var(--ak-transition-slow);
+}
+.ak-slide-left-enter-from,
+.ak-slide-left-leave-to {
+  transform: translateX(-100%);
+}
+.ak-slide-right-enter-from,
+.ak-slide-right-leave-to {
+  transform: translateX(100%);
+}
+
+/* Collapse for Menu */
+.ak-collapse-enter-active,
+.ak-collapse-leave-active {
+  transition: all var(--ak-transition-base);
+  overflow: hidden;
+}
+.ak-collapse-enter-from,
+.ak-collapse-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
