@@ -1,0 +1,67 @@
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 必须明确指定 ref: main，确保拉取主分支以便后续推送版本更新
+      - uses: actions/checkout@v4
+        with:
+          ref: main 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      
+      # 2. 进入子目录更新版本号 (--no-git-tag-version 防止它自动打 tag 导致冲突)
+      - name: Bump version in sub-package
+        working-directory: ./packages/arknights-ui
+        run: npm version patch --no-git-tag-version
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "chore: bump version to next dev" || echo "No changes to commit"
+          git push origin HEAD:main
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # 3. 必须拉取 main 分支！否则拿到的是 Release 创建时的旧代码（旧版本号）
+      - uses: actions/checkout@v4
+        with:
+          ref: main 
+          
+      # 4. 你是 pnpm monorepo，必须安装 pnpm (请根据你本地的 pnpm 版本修改 version)
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10 
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: 'pnpm'
+
+      # 5. 使用 pnpm 安装依赖
+      - run: pnpm install --frozen-lockfile
+
+      # 6. 关键：组件库必须构建！必须在发布前执行 build
+      - run: pnpm build 
+
+      # 7. 关键：进入子目录发布，并加上 --access public 和 --no-git-checks
+      - name: Publish to npm
+        working-directory: ./packages/arknights-ui
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
