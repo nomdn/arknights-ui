@@ -1,6 +1,6 @@
 {
   "name": "@arknights-ui/arknights-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Arknights-themed Vue 3 component library",
   "type": "module",
   "main": "./src/index.ts",
@@ -14,7 +14,9 @@
     },
     "./styles": "./src/styles/index.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "dev": "vite build --watch"
@@ -32,6 +34,11 @@
     "vite-plugin-dts": "^4.0.0",
     "vue-tsc": "^2.1.0"
   },
-  "keywords": ["vue3", "arknights", "ui", "component-library"],
+  "keywords": [
+    "vue3",
+    "arknights",
+    "ui",
+    "component-library"
+  ],
   "license": "MIT"
 }
