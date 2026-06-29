@@ -1,5 +1,6 @@
 @import './variables.css';
 @import './reset.css';
+@import './transitions.css';
 
 /* Arknights signature clip-path for components */
 /* Used for buttons and cards to create that angular tech feel */

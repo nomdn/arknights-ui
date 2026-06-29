@@ -12,6 +12,8 @@ import Menu, { ArknightsMenuItem } from './components/Menu'
 import Dialog from './components/Dialog'
 import Drawer from './components/Drawer'
 import Pagination from './components/Pagination'
+import Select from './components/Select'
+import Switch from './components/Switch'
 
 const components = [
   Button,
@@ -23,6 +25,8 @@ const components = [
   Dialog,
   Drawer,
   Pagination,
+  Select,
+  Switch,
 ]
 
 const install = (app: App) => {
@@ -43,6 +47,8 @@ export {
   Dialog,
   Drawer,
   Pagination,
+  Select,
+  Switch,
 }
 
 export default { install }

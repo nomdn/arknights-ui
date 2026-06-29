@@ -14,6 +14,8 @@ const routes: RouteRecordRaw[] = [
   { path: '/components/dialog', component: () => import('../pages/DialogDoc.vue') },
   { path: '/components/drawer', component: () => import('../pages/DrawerDoc.vue') },
   { path: '/components/pagination', component: () => import('../pages/PaginationDoc.vue') },
+  { path: '/components/select', component: () => import('../pages/SelectDoc.vue') },
+  { path: '/components/switch', component: () => import('../pages/SwitchDoc.vue') },
   // Design
   { path: '/design/tokens', component: () => import('../pages/DesignTokens.vue') },
   { path: '/design/colors', component: () => import('../pages/ColorSystem.vue') },

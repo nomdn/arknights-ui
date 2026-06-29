@@ -111,12 +111,26 @@ defineExpose({ focus: () => inputRef.value?.focus() })
   height: var(--ak-component-size-md);
   background: var(--ak-bg-input);
   border: 1px solid var(--ak-border-color);
-  border-left: 2px solid #fff;
+  border-left: none;
   transition: all var(--ak-transition-fast);
   overflow: hidden;
   gap: var(--ak-spacing-sm);
   padding: 0 var(--ak-spacing-md);
   position: relative;
+}
+
+/* Left accent bar — uses ::before pseudo-element instead of border-left
+   to avoid border miter join (trapezoid artifact when border widths differ) */
+.ak-input::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--ak-primary);
+  z-index: 2;
+  transition: background var(--ak-transition-fast);
 }
 
 .ak-size-sm {
@@ -178,7 +192,6 @@ defineExpose({ focus: () => inputRef.value?.focus() })
 /* Focus state */
 .ak-input--focused {
   border-color: var(--ak-primary);
-  border-left: 2px solid var(--ak-primary);
 }
 .ak-input--focused .ak-input__focus-mask {
   opacity: 1;
@@ -204,12 +217,12 @@ defineExpose({ focus: () => inputRef.value?.focus() })
 
 .ak-input__clear {
   cursor: pointer;
-  color: var(--ak-text-secondary);
+  color: var(--ak-text-primary);
   font-size: var(--ak-font-size-lg);
   line-height: 1;
   transition: color var(--ak-transition-fast);
 }
 .ak-input__clear:hover {
-  color: var(--ak-danger);
+  color: var(--ak-text-secondary);
 }
 </style>

@@ -13,8 +13,7 @@
         >
           <p>确认部署该干员？此操作不可撤销。</p>
           <template #footer>
-            <AkButton @click="showDialog1 = false">取消</AkButton>
-            <AkButton variant="primary" @click="showDialog1 = false">确认部署</AkButton>
+
           </template>
         </AkDialog>
       </div>

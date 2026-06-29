@@ -40,6 +40,8 @@ const navGroups = [
       { path: '/button', label: 'Button 按钮' },
       { path: '/input', label: 'Input 输入框' },
       { path: '/card', label: 'Card 卡片' },
+      { path: '/select', label: 'Select 选择器' },
+      { path: '/switch', label: 'Switch 开关' },
     ],
   },
   {

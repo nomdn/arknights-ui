@@ -10,6 +10,8 @@ const routes: RouteRecordRaw[] = [
   { path: '/dialog', component: () => import('../demos/DialogDemo.vue') },
   { path: '/drawer', component: () => import('../demos/DrawerDemo.vue') },
   { path: '/pagination', component: () => import('../demos/PaginationDemo.vue') },
+  { path: '/select', component: () => import('../demos/SelectDemo.vue') },
+  { path: '/switch', component: () => import('../demos/SwitchDemo.vue') },
 ]
 
 export default routes

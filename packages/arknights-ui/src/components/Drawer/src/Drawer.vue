@@ -58,6 +58,8 @@ const transitionName = computed(() => {
   const map: Record<string, string> = {
     left: 'ak-slide-left',
     right: 'ak-slide-right',
+    top: 'ak-slide-top',
+    bottom: 'ak-slide-bottom',
   }
   return map[props.placement] || 'ak-slide-right'
 })
@@ -114,6 +116,20 @@ function handleClose() {
   left: 0;
 }
 
+.ak-drawer--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+}
+
+.ak-drawer--bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+}
+
 /* Edge accent line */
 .ak-drawer__accent {
   position: absolute;
@@ -128,6 +144,26 @@ function handleClose() {
 }
 .ak-drawer__accent--left {
   left: 0;
+  background: var(--ak-primary);
+  opacity: 0.6;
+}
+.ak-drawer__accent--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  height: 2px;
+  background: var(--ak-primary);
+  opacity: 0.6;
+}
+.ak-drawer__accent--bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+  width: auto;
+  height: 2px;
   background: var(--ak-primary);
   opacity: 0.6;
 }

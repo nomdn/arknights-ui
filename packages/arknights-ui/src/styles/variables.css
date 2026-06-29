@@ -1,5 +1,11 @@
+/* ============================================================
+   Arknights UI Design Tokens
+   Color theme controlled by html.dark attribute
+   Reference: hexo-theme-arknights dark.styl / light.styl
+   ============================================================ */
+
+/* === Brand Colors (theme-independent) === */
 :root {
-  /* === Arknights Color System (from official themes) === */
   --ak-primary: #18d1ff;
   --ak-primary-light: #2bf;
   --ak-primary-lighter: #5ee4ff;
@@ -7,7 +13,6 @@
   --ak-primary-dark: #0fa8d4;
   --ak-primary-darker: #0c8ab0;
 
-  /* Subcolor - the iconic Arknights yellow accent */
   --ak-subcolor: #ffee22;
   --ak-subcolor-light: #fff55e;
   --ak-subcolor-dark: #e6d200;
@@ -26,35 +31,7 @@
 
   --ak-info: #7e57c2;
 
-  /* === Background Layers (from hexo-theme-arknights dark mode) === */
-  --ak-bg-base: #141516;
-  --ak-bg-panel: #1a1a1a;
-  --ak-bg-card: rgba(20, 21, 22, 0.95);
-  --ak-bg-card-hover: rgba(50, 52, 54, 0.8);
-  --ak-bg-input: #000;
-  --ak-bg-overlay: rgba(0, 0, 0, 0.85);
-  --ak-bg-soft: rgba(#fff, .05);
-  --ak-bg-soft-hover: rgba(#fff, .1);
-
-  /* === Borders === */
-  --ak-border-color: rgba(#fff, .1);
-  --ak-border-color-light: #fff;
-  --ak-border-color-active: var(--ak-primary);
-  --ak-border-radius-sm: 2px;
-  --ak-border-radius-md: 3px;
-  --ak-border-radius-lg: 4px;
-  --ak-border-radius-xl: 6px;
-
-  /* === Text (from hexo-theme-arknights dark.styl) === */
-  --ak-text-primary: #fff;
-  --ak-text-regular: #c4c4c4;
-  --ak-text-secondary: #898989;
-  --ak-text-muted: #535353;
-  --ak-text-placeholder: #89898966;
-  --ak-text-rev: #000;
-  --ak-text-hover-on-primary: #000;
-
-  /* === Typography (from astro-arknights / official fonts) === */
+  /* === Typography === */
   --ak-font-family: 'Bender', 'Noto Sans SC', 'Microsoft YaHei', '\5b8b\4f53', sans-serif;
   --ak-font-family-light: 'BenderLight', 'Noto Sans SC', sans-serif;
   --ak-font-family-bold: 'BenderBold', 'Noto Sans SC', sans-serif;
@@ -72,12 +49,11 @@
   --ak-font-weight-bold: 600;
   --ak-line-height-base: 1.5;
 
-  /* === Shadows === */
-  --ak-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --ak-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --ak-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
-  --ak-shadow-glow: 0 0 15px rgba(24, 209, 255, 0.25);
-  --ak-shadow-glow-strong: 0 0 25px rgba(24, 209, 255, 0.45);
+  /* === Border Radius === */
+  --ak-border-radius-sm: 2px;
+  --ak-border-radius-md: 3px;
+  --ak-border-radius-lg: 4px;
+  --ak-border-radius-xl: 6px;
 
   /* === Transitions === */
   --ak-transition-fast: 150ms ease;
@@ -102,4 +78,92 @@
   --ak-component-size-sm: 28px;
   --ak-component-size-md: 36px;
   --ak-component-size-lg: 44px;
+}
+
+/* ============================================================
+   DARK THEME (html.dark)
+   Source: hexo-theme-arknights dark.styl
+   ============================================================ */
+html.dark {
+  /* Backgrounds */
+  --ak-bg-base: #141516;
+  --ak-bg-panel: #1a1a1a;
+  --ak-bg-card: rgba(20, 21, 22, 0.95);
+  --ak-bg-card-hover: rgba(50, 52, 54, 0.8);
+  --ak-bg-input: #000;
+  --ak-bg-overlay: rgba(0, 0, 0, 0.85);
+  --ak-bg-soft: rgba(255, 255, 255, 0.05);
+  --ak-bg-soft-hover: rgba(255, 255, 255, 0.1);
+
+  /* Borders */
+  --ak-border-color: rgba(255, 255, 255, 0.1);
+  --ak-border-color-light: #fff;
+  --ak-border-color-active: var(--ak-primary);
+
+  /* Text */
+  --ak-text-primary: #fff;
+  --ak-text-regular: #c4c4c4;
+  --ak-text-secondary: #898989;
+  --ak-text-muted: #535353;
+  --ak-text-placeholder: #89898966;
+  --ak-text-rev: #000;
+  --ak-text-hover-on-primary: #000;
+
+  /* Shadows */
+  --ak-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --ak-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --ak-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --ak-shadow-glow: 0 0 15px rgba(24, 209, 255, 0.25);
+  --ak-shadow-glow-strong: 0 0 25px rgba(24, 209, 255, 0.45);
+
+  /* Dialog (Arknights-style light dialog on dark overlay) */
+  --ak-dialog-bg: rgba(220, 222, 224, 0.95);
+  --ak-dialog-border: rgba(255, 255, 255, 0.15);
+  --ak-dialog-title: #1a1a1a;
+  --ak-dialog-body: #1a1a1a;
+  --ak-dialog-overlay: rgba(0, 0, 0, 0.65);
+}
+
+/* ============================================================
+   LIGHT THEME (html:not(.dark))
+   Source: hexo-theme-arknights light.styl
+   ============================================================ */
+html:not(.dark) {
+  /* Backgrounds — from light.styl: --theme-background #f4f5f6 */
+  --ak-bg-base: #f4f5f6;
+  --ak-bg-panel: #e8eaed;
+  --ak-bg-card: rgba(244, 245, 246, 0.95);
+  --ak-bg-card-hover: rgba(244, 245, 246, 0.8);
+  --ak-bg-input: #fff;
+  --ak-bg-overlay: rgba(0, 0, 0, 0.45);
+  --ak-bg-soft: rgba(255, 255, 255, 0.3);
+  --ak-bg-soft-hover: rgba(255, 255, 255, 0.6);
+
+  /* Borders — from light.styl: --theme-border-light #000, --theme-border-soft rgba(#000, .1) */
+  --ak-border-color: rgba(0, 0, 0, 0.1);
+  --ak-border-color-light: #000;
+  --ak-border-color-active: var(--ak-primary);
+
+  /* Text — from light.styl: --theme-text #222, --theme-text-light #000, --theme-text-rev #fff */
+  --ak-text-primary: #000;
+  --ak-text-regular: #222;
+  --ak-text-secondary: #767676;
+  --ak-text-muted: #acacac;
+  --ak-text-placeholder: #76767666;
+  --ak-text-rev: #fff;
+  --ak-text-hover-on-primary: #000;
+
+  /* Shadows */
+  --ak-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --ak-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --ak-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --ak-shadow-glow: 0 0 15px rgba(24, 209, 255, 0.15);
+  --ak-shadow-glow-strong: 0 0 25px rgba(24, 209, 255, 0.25);
+
+  /* Dialog (Arknights-style dark dialog on light overlay) */
+  --ak-dialog-bg: rgba(30, 30, 30, 0.95);
+  --ak-dialog-border: rgba(0, 0, 0, 0.15);
+  --ak-dialog-title: #f4f5f6;
+  --ak-dialog-body: #e0e0e0;
+  --ak-dialog-overlay: rgba(244, 245, 246, 0.65);
 }

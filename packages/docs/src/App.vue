@@ -53,6 +53,8 @@ const sidebarGroups = [
     items: [
       { path: '/components/button', label: 'Button 按钮' },
       { path: '/components/input', label: 'Input 输入框' },
+      { path: '/components/select', label: 'Select 选择器' },
+      { path: '/components/switch', label: 'Switch 开关' },
     ],
   },
   {
